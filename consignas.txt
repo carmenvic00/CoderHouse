@@ -3,7 +3,3 @@ hasta que el usuario ingrese la palabra "chau".
 
 Consigna: Pedi al usuario que ingrese una palabra, imprimi un "!" por cada letra que tenga
 la palabra ingresada.
-
-Consigna: Pedi un numero natural al usuario, imprimi por pantalla un conteo desde el numero 0 hacia el
-numero que ingreso el usuario.
-
