@@ -1,0 +1,7 @@
+La idea principal de la página es que sea un pet shop, más adelante quiero agregarle que se pueda ver gatitos en adopción 
+y si alguien está interesado en uno puede llenar un formulario de adopción!
+
+Cree una lista de los productos con sus respectivos precios (más adelante agrego mas productos).
+Una función donde se pueda agregar productos al carrito, otra función donde pueda sumar la cantidad de los productos 
+elegidos y luego el total y por último una función donde se pueda eliminar algun producto del carrito.
+
