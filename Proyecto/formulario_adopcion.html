@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="./styles/estilos.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <title>
+                    Formulario de pre-adopción
+            </title>
+
+    </head>
+
+    <body>
+
+        <div id="div-topbar" class="topbar p-2">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-1">
+                    <h2 class="col"> <a href="./Home.html" class="nav-link">HOME</a> </h2>  
+                </div>
+                <div class="col-6">
+                    <div class="row no-gutters text-center">
+                        <div class="col"> <a href="./petShop.html" class="nav-link">Pet Shop</a>   </div>
+                        <div class="col"> <a href="./gatitos.html" class="nav-link">Gatitos</a> </div>
+                        <div class="col"> <a href="./formulario_adopcion.html" class="nav-link">Formulario</a> </div> 
+                        <div class="col"> <a href="" class="nav-link">Contacto</a> </div>
+                        <div class="col"> <input class="borderTopbarandImg" type="text" placeholder="Buscar"> </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="div-inicial-formulario" class=" fw-bold p-4 fs-6 ms-5 me-5 ">
+            <h3 class="text-center" > 
+                Formulario de preadopción - Pancitas Arriba
+            </h3>
+                <p class="indent20 mt-4">
+                    Hola! Que lindo que te hayas decidido a adoptar y sumar un gatito a tu familia! 
+                    Adoptar es un compromiso de por vida. Te pedimos POR FAVOR que evalues todos los pros 
+                    y contras que consideras que tiene la incorporación de un gato a tu familia antes de adoptar.
+                </p>
+                <p class="indent20 mt-4">
+                    Si la decisión está tomada, te invitamos a completar el siguiente cuestionario con total 
+                    sinceridad y a contarnos todo lo que consideres necesario.
+                    Estos son algunos requisitos para adoptar:
+                </p>
+                <ul>
+                    <li>
+                        Ser mayor de 21 años.
+                    </li>
+                    <li>
+                        Vivir en CABA o alrededores.
+                    </li>
+                    <li>
+                        Contar con protecciones en todas las salidas al exterior.
+                    </li>
+                </ul>
+        </div> 
+          
+        <div class="m-4">
+            <div class="mt-4">
+                <p class="fw-bold">
+                    Nombre del gatito que te interesa adoptar:
+                </p>
+                <input type="text" placeholder="Tu respuesta">
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold">
+                    Nombre completo:
+                </p>
+                <input type="text" placeholder="Tu respuesta">
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold">
+                    Correo electrónico:
+                </p>
+                <input type="text" placeholder="Tu respuesta">
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold"> 
+                    Teléfono de contacto:
+                </p>
+                <input type="text" placeholder="Tu respuesta" >
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold">
+
+                    ¿Todos en el hogar estan de acuerdo en incorporar una mascota?
+                </p>
+            </div>
+            <div>        
+                <input name="opcion" type="radio">
+                <label for="opcion">Si</label> 
+            </div>
+            <div>
+                <input name="opcion" type="radio">
+                <label for="opcion">No</label>
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold"> ¿Cuentas con protecciones (red, rejas, etc) en todas las ventanas, balcones, terraza y/o patio?</p>
+            </div>
+            <div>   
+                <input name="a" type="radio">
+                <label  for="a">Si, tengo protecciones en todos lados.</label>
+            </div>  
+            <div>
+                <input name="a" type="radio" >
+                <label for="a">No, no tengo protecciones.</label>
+            </div> 
+            <div>  
+                <input name="a" type="radio">
+                <label for="a">No, no tengo protecciones pero puedo ponerlas.</label>   
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold" id="adjuntar-fotos">
+                    En caso de tener protecciones en todos lados pedimos adjuntar fotos:
+                </p> 
+                <input type="file">
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold">
+                    ¿Qué alimento ténes pensado darle?
+                </p>
+                    <select name="comida" id="comida">
+                        <option disabled="true" selected="true" value="">
+                            Selecciona
+                        </option>
+                        <option value="1">
+                            Royal Canin
+                        </option>
+                        <option value="2">
+                            Excellent purina
+                        </option>
+                        <option value="3">
+                            Old prince
+                        </option>
+                        <option value="4">
+                            Pro plan purina
+                        </option>
+                        <option value="5">
+                            Nutrique
+                        </option>
+                        <option value="6">
+                            Otro
+                        </option>
+                    </select>
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold"> En caso de tener dudas podés consultar acá:
+                </p>
+                <a href="https://www.timberline.com.ar/blog/calidades-de-los-alimentos-balanceados-b19.html">Click acá</a>
+            </div>
+            <div class="mt-4">
+                <p class="fw-bold">
+                    ¿Estas de acuerdo con las condiciones y estar seguro de querer adoptar?
+                </p>
+                <input name="confirmacion" type="checkbox">
+                <label for="confirmacion">Si, estoy de acuerdo con las condiciones establecidas y quiero adoptar.</label>
+            </div> 
+                <p class="grosor">
+                    Una vez terminado el formulario nos estaremos contactando con vos a la brevedad posible (:
+                </p>
+            <button class="btn btn-primary mb-3">
+                FINALIZAR
+            </button>
+        </div>
+
+    </body>
+</html>

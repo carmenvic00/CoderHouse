@@ -50,7 +50,7 @@ function calcularPrecioCarrito() {
             if (productoActual == listaDeProductos[index2].nombre) {
                 precioProducto = cantidadActual * listaDeProductos[index2].precio;
                 console.log(`${productoActual} sería ${precioProducto}`);
-                precioFinal =  precioFinal + precioProducto;     
+                precioFinal =  precioFinal + precioProducto;   
             }
         }     
     }
@@ -68,6 +68,15 @@ function eliminarDelCarrito(nombreDelProducto){
     return console.log("No se encontro el producto a eliminar")
 }
 
+function buscarEnStock(nombreDelProducto) {
+    for (let index = 0; index < listaDeProductos.length; index++) {
+        if (nombreDelProducto == listaDeProductos[index].nombre) {
+            return console.log(`Tenemos el producto ${listaDeProductos[index].nombre} en stock y cuesta ${listaDeProductos[index].precio}`)
+        }
+    }
+    return console.log(`No tenemos este producto en stock`)
+}
+
 //Ejemplo para agregar al carrito :)
 agregarAlCarrito("Rascador para gatos", 4);
 agregarAlCarrito("Arena para gatos", 5);
@@ -82,4 +91,5 @@ console.log(carritoDeCompras)
 
 eliminarDelCarrito("Arena para gatos");
 console.log(carritoDeCompras)
-calcularPrecioCarrito();
+calcularPrecioCarrito()
+buscarEnStock("Rascador para gatos") 
