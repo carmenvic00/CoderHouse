@@ -107,3 +107,4 @@ const randomIndex = Math.floor(Math.random() * ((mensaje.length) - 0) + 0) ;
 const randomMensajes = mensaje[randomIndex]
 const elementoMensajes = document.getElementById("mensajes")
 elementoMensajes.innerText = randomMensajes
+
