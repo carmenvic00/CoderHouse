@@ -9,8 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    <script src="./miarchivo.js"></script>
-
     <div id="div-topbar" class="topbar p-2">
         <div class="row align-items-center justify-content-between">
             <div class="col-1">
@@ -28,5 +26,91 @@
         </div>
     </div>
 
+    
+    <div class="p-5">
+        <h4 class="text-center colorengatitos BorderTextgatitos p-2 mt-5">
+            Productos en el Pet Shop Capitán Magoo
+        </h4>
+    </div>    
+    <div class="row mb-5 justify-content-center">
+        <div class="col-3" >  
+            <div class="BorderTextgatitos colorEnPetShop">
+                <img class="d-block mx-auto mt-3" width="200px" src="./imagenesPetShop/arenaSanitariaStoneCat.jpg" alt="arenaSanitaria">
+                <p class="fw-bold text-center mt-3"> Arena Sanitaria StoneCat - 8 Kg </p>
+                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonArenaParaGatos">
+                    Agregar al Carrito
+                </button>
+                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonArenaParaGatosDel">
+                    Eliminar del Carrito
+                </button>
+            </div>       
+        </div>
+    
+        <div class="col-3">
+            <div class="BorderTextgatitos colorEnPetShop">
+                <img class="d-block mx-auto mt-3" width="200px" src="./imagenesPetShop/jugueteAntiestresCancat.jpg" alt="jugueteAntiestresCancat">
+                <p class="fw-bold text-center mt-3"> Juguete Antiestres Cancat Hueso Saborizado</p> 
+                <button class="btn btn-outline-dark d-block mx-auto" id="botonJugueteAntiEstres">
+                    Agregar al Carrito
+                </button>
+                <button class="btn btn-outline-dark mt-4 d-block mx-auto" id="botonJugueteAntiEstresDel">
+                    Eliminar del Carrito
+                </button>
+            </div>
+        </div>
+        <div class="col-3 col-auto" >  
+            <div class="BorderTextgatitos colorEnPetShop">
+                <img class=" d-block mx-auto mt-3" width="200px"   src="./imagenesPetShop/rascadorParaGatos.jpg" alt="rascadorParaGatos"> 
+                <p class="fw-bold text-center mt-3"> Rascador Puppis Infinito Madera y Carton </p>
+                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonRascadorParaGatos">
+                    Agregar al Carrito
+                </button>
+                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonRascadorParaGatosDel">
+                    Eliminar del Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row mb-5 justify-content-center">
+
+        <div class="col-3">
+            <div class="BorderTextgatitos colorEnPetShop"> 
+                    <img class="d-block mx-auto mt-3" width="200px" src="./imagenesPetShop/royalCaninPerroAdulto.jpg" alt="alimentoParaPerros">
+                <p class="fw-bold text-center mt-3"> Alimento Royal Canin para Perro Medium Adulto - 15kg </p>
+                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonRoyalCaninMedium">
+                    Agregar al Carrito
+                </button>
+                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonRoyalCaninMediumDel">
+                    Eliminar del Carrito
+                </button>
+            </div>
+        </div>
+            <div class="col-3" >  
+                <div class="BorderTextgatitos colorEnPetShop">
+                    <img class="d-block mx-auto mt-3" width="200px" src="./imagenesPetShop/royalCaninWeightControl.png" alt="alimentoParaGatos">
+                    <p class="fw-bold text-center mt-3"> Alimento Royal Canin Gatos Castrados Weight Control adulto - 12 kg </p>
+                    <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonRoyalCaninCastrados">
+                        Agregar al Carrito
+                    </button>
+                    <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonRoyalCaninCastradosDel">
+                        Eliminar del Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-3" >  
+                <div class="BorderTextgatitos colorEnPetShop">
+                    <img class="d-block mx-auto mt-3 rounded" width="200px" src="./imagenesPetShop/jugueteGatos.jpg" alt="jugueteGatos">
+                    <p class="fw-bold text-center mt-3"> Juguete Gatos Circuito interactivo de pelotas </p>
+                    <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonJugueteGatos">
+                        Agregar al Carrito
+                    </button>
+                    <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonJugueteGatosDel">
+                        Eliminar del Carrito
+                    </button>
+                </div>
+            </div>
+    </div>  
+    <script src="./carrito.js"></script>
 </body>
 </html>
