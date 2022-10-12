@@ -51,13 +51,15 @@ let listaDeProductos = [
 
 // lista que contiene la compra del usuario
 
-let carritoDeCompras = [];
-let carritoDeComprasLS = JSON.parse(sessionStorage.getItem('carrito'));
-if (carritoDeComprasLS) {
-    for (let index = 0; index < carritoDeComprasLS.length; index++) {
-        carritoDeCompras.push(carritoDeComprasLS[index])
-    }
-}
+let carritoDeCompras = JSON.parse(sessionStorage.getItem('carrito')) || []
+
+// let carritoDeCompras = [];
+// let carritoDeComprasLS = JSON.parse(sessionStorage.getItem('carrito'))
+// if (carritoDeComprasLS) {
+//     for (let index = 0; index < carritoDeComprasLS.length; index++) {
+//         carritoDeCompras.push(carritoDeComprasLS[index])
+//     }
+// }
 
 //función para agregar productos al carrito, recibe como parametro el nombre y cantidad de producto
 function agregarAlCarrito(nombreDelProducto, cantidad) {
@@ -66,7 +68,9 @@ function agregarAlCarrito(nombreDelProducto, cantidad) {
         "cantidad": cantidad
     }
     for (let index = 0; index < listaDeProductos.length; index++) { //iteracion sobre lista de stock para ver si el producto existe
-        if (nombreDelProducto == listaDeProductos[index].nombre) {
+        let {id, nombre, precio} = listaDeProductos[index]
+
+        if (nombreDelProducto == nombre) {
             carritoDeCompras.push(producto);
             sessionStorage.setItem("carrito", JSON.stringify(carritoDeCompras))
             return console.log(`Se agregó el producto ${nombreDelProducto}, ${cantidad} cantidades.`)
@@ -77,15 +81,32 @@ function agregarAlCarrito(nombreDelProducto, cantidad) {
 }
 
 // función para calcular el precio de los productos por cantidad y luego el precio final
+// function calcularPrecioCarrito() {
+//     let precioFinal = 0;
+//     for (let index = 0; index < carritoDeCompras.length; index++) { // iteración sobre el carrito de compras para recuperar el nombre y cantidad de cada producto
+//         productoActual = carritoDeCompras[index].nombre;
+//         cantidadActual = carritoDeCompras[index].cantidad;
+//         for (let index2 = 0; index2 < listaDeProductos.length; index2++) { // iteración sobre el stock para recuperar el precio de cada producto
+//             if (productoActual == listaDeProductos[index2].nombre) {
+//                 precioProducto = cantidadActual * listaDeProductos[index2].precio;
+//                 console.log(`${productoActual} sería ${precioProducto}`);
+//                 precioFinal =  precioFinal + precioProducto;   
+//             }
+//         }     
+//     }
+//     console.log(`El precio final a pagar es de: ${precioFinal} pesos`);
+//     return precioFinal
+// }
+
 function calcularPrecioCarrito() {
     let precioFinal = 0;
     for (let index = 0; index < carritoDeCompras.length; index++) { // iteración sobre el carrito de compras para recuperar el nombre y cantidad de cada producto
-        productoActual = carritoDeCompras[index].nombre;
-        cantidadActual = carritoDeCompras[index].cantidad;
+        let {nombre: nombreCarrito, cantidad: cantidadCarrito} = carritoDeCompras[index]
         for (let index2 = 0; index2 < listaDeProductos.length; index2++) { // iteración sobre el stock para recuperar el precio de cada producto
-            if (productoActual == listaDeProductos[index2].nombre) {
-                precioProducto = cantidadActual * listaDeProductos[index2].precio;
-                console.log(`${productoActual} sería ${precioProducto}`);
+            let {nombre: nombreLista, precio: precioLista} = listaDeProductos[index2]
+            if (nombreCarrito == nombreLista) {
+                precioProducto = cantidadCarrito * precioLista;
+                console.log(`${nombreCarrito} sería ${precioProducto}`);
                 precioFinal =  precioFinal + precioProducto;   
             }
         }     
@@ -97,7 +118,8 @@ function calcularPrecioCarrito() {
 //función para eliminar algun producto del carrito
 function eliminarDelCarrito(nombreDelProducto){
     for (let index = 0; index < carritoDeCompras.length; index++) {  //iteración sobre el carrito de compras para recuperar el nombre del producto que se quiere eliminar
-        if (nombreDelProducto == carritoDeCompras[index].nombre) {
+        let {nombre} = carritoDeCompras[index]
+        if (nombreDelProducto == nombre) {
             carritoDeCompras.splice(index, 1);
             sessionStorage.setItem("carrito", JSON.stringify(carritoDeCompras))
             return console.log(`Se eliminó el producto ${nombreDelProducto}`)
@@ -106,14 +128,25 @@ function eliminarDelCarrito(nombreDelProducto){
     return console.log("No se encontro el producto a eliminar")
 }
 
+// function buscarEnStock(nombreDelProducto) {
+//     for (let index = 0; index < listaDeProductos.length; index++) {
+//         if (nombreDelProducto == listaDeProductos[index].nombre) {
+//             return console.log(`Tenemos el producto ${listaDeProductos[index].nombre} en stock y cuesta ${listaDeProductos[index].precio}`)
+//         }
+//     }
+//     return console.log(`No tenemos este producto en stock`)
+// }
+
 function buscarEnStock(nombreDelProducto) {
     for (let index = 0; index < listaDeProductos.length; index++) {
-        if (nombreDelProducto == listaDeProductos[index].nombre) {
-            return console.log(`Tenemos el producto ${listaDeProductos[index].nombre} en stock y cuesta ${listaDeProductos[index].precio}`)
+        let {nombre, precio} = listaDeProductos[index]
+        if (nombreDelProducto == nombre) {
+            return console.log(`Tenemos el producto ${nombre} en stock y cuesta ${precio}`)
         }
     }
     return console.log(`No tenemos este producto en stock`)
 }
+
 
 botonJugueteGatos.onclick = ("click", () => agregarAlCarrito("Juguete para gatos",1))
 botonJugueteGatosDel.onclick = ("click", () =>  eliminarDelCarrito("Juguete para gatos"))
