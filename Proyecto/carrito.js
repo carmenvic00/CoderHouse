@@ -118,20 +118,11 @@ function buscarEnStock(nombreDelProducto) {
     }
     return console.log(`No tenemos este producto en stock`)
 }
-
+// funcion de mensajes para no repetir codigo en el resto de las funciones
 function miAviso(mensaje, duracion){
-    // Swal.fire({
-    //     title: titulo,
-    //     text: mensaje,
-    //     icon: icono,
-    //     confirmButtonText: 'Cerrar'
-    // })
     Toastify({
-
-        text: mensaje,
-        
-        duration: duracion
-        
+        text: mensaje,     
+        duration: duracion   
         }).showToast();
 }
 
