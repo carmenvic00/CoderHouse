@@ -67,7 +67,7 @@ function agregarAlCarrito(nombreDelProducto, cantidad) {
             carritoDeCompras.push(producto);
             sessionStorage.setItem("carrito", JSON.stringify(carritoDeCompras))
             let mensaje = (`Se agrego el producto ${nombreDelProducto} al carrito!`)
-            miAviso('Agregado!',mensaje,'success')
+            miAviso(mensaje,3000)
             return console.log(`Se agregó el producto ${nombreDelProducto}, ${cantidad} cantidades.`)
         } 
     }
@@ -100,12 +100,12 @@ function eliminarDelCarrito(nombreDelProducto){
             carritoDeCompras.splice(index, 1);
             sessionStorage.setItem("carrito", JSON.stringify(carritoDeCompras))
             let mensaje = (`Se elimino el producto ${nombreDelProducto} del carrito!`)
-            miAviso('Eliminado!',mensaje,'success')
+            miAviso(mensaje,3000)
             return console.log(`Se eliminó el producto ${nombreDelProducto}`)
         }          
     }
     let mensaje = (`Usted no tiene el elemento ${nombreDelProducto} en su carrito`)
-    miAviso('Producto no encontrado!',mensaje,'warning')
+    miAviso(mensaje,3000)
     return console.log("No se encontro el producto a eliminar")
 }
 
@@ -119,13 +119,20 @@ function buscarEnStock(nombreDelProducto) {
     return console.log(`No tenemos este producto en stock`)
 }
 
-function miAviso(titulo, mensaje, icono){
-    Swal.fire({
-        title: titulo,
+function miAviso(mensaje, duracion){
+    // Swal.fire({
+    //     title: titulo,
+    //     text: mensaje,
+    //     icon: icono,
+    //     confirmButtonText: 'Cerrar'
+    // })
+    Toastify({
+
         text: mensaje,
-        icon: icono,
-        confirmButtonText: 'Cerrar'
-    })
+        
+        duration: duracion
+        
+        }).showToast();
 }
 
 
