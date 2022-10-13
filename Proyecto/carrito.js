@@ -53,13 +53,6 @@ let listaDeProductos = [
 
 let carritoDeCompras = JSON.parse(sessionStorage.getItem('carrito')) || []
 
-// let carritoDeCompras = [];
-// let carritoDeComprasLS = JSON.parse(sessionStorage.getItem('carrito'))
-// if (carritoDeComprasLS) {
-//     for (let index = 0; index < carritoDeComprasLS.length; index++) {
-//         carritoDeCompras.push(carritoDeComprasLS[index])
-//     }
-// }
 
 //función para agregar productos al carrito, recibe como parametro el nombre y cantidad de producto
 function agregarAlCarrito(nombreDelProducto, cantidad) {
@@ -73,30 +66,14 @@ function agregarAlCarrito(nombreDelProducto, cantidad) {
         if (nombreDelProducto == nombre) {
             carritoDeCompras.push(producto);
             sessionStorage.setItem("carrito", JSON.stringify(carritoDeCompras))
+            let mensaje = (`Se agrego el producto ${nombreDelProducto} al carrito!`)
+            miAviso('Agregado!',mensaje,'success')
             return console.log(`Se agregó el producto ${nombreDelProducto}, ${cantidad} cantidades.`)
         } 
     }
     carrito = calcularPrecioCarrito();
     return console.log(`El producto ${nombreDelProducto} no existe en stock. ${carrito}`)
 }
-
-// función para calcular el precio de los productos por cantidad y luego el precio final
-// function calcularPrecioCarrito() {
-//     let precioFinal = 0;
-//     for (let index = 0; index < carritoDeCompras.length; index++) { // iteración sobre el carrito de compras para recuperar el nombre y cantidad de cada producto
-//         productoActual = carritoDeCompras[index].nombre;
-//         cantidadActual = carritoDeCompras[index].cantidad;
-//         for (let index2 = 0; index2 < listaDeProductos.length; index2++) { // iteración sobre el stock para recuperar el precio de cada producto
-//             if (productoActual == listaDeProductos[index2].nombre) {
-//                 precioProducto = cantidadActual * listaDeProductos[index2].precio;
-//                 console.log(`${productoActual} sería ${precioProducto}`);
-//                 precioFinal =  precioFinal + precioProducto;   
-//             }
-//         }     
-//     }
-//     console.log(`El precio final a pagar es de: ${precioFinal} pesos`);
-//     return precioFinal
-// }
 
 function calcularPrecioCarrito() {
     let precioFinal = 0;
@@ -122,20 +99,15 @@ function eliminarDelCarrito(nombreDelProducto){
         if (nombreDelProducto == nombre) {
             carritoDeCompras.splice(index, 1);
             sessionStorage.setItem("carrito", JSON.stringify(carritoDeCompras))
+            let mensaje = (`Se elimino el producto ${nombreDelProducto} del carrito!`)
+            miAviso('Eliminado!',mensaje,'success')
             return console.log(`Se eliminó el producto ${nombreDelProducto}`)
         }          
     }
+    let mensaje = (`Usted no tiene el elemento ${nombreDelProducto} en su carrito`)
+    miAviso('Producto no encontrado!',mensaje,'warning')
     return console.log("No se encontro el producto a eliminar")
 }
-
-// function buscarEnStock(nombreDelProducto) {
-//     for (let index = 0; index < listaDeProductos.length; index++) {
-//         if (nombreDelProducto == listaDeProductos[index].nombre) {
-//             return console.log(`Tenemos el producto ${listaDeProductos[index].nombre} en stock y cuesta ${listaDeProductos[index].precio}`)
-//         }
-//     }
-//     return console.log(`No tenemos este producto en stock`)
-// }
 
 function buscarEnStock(nombreDelProducto) {
     for (let index = 0; index < listaDeProductos.length; index++) {
@@ -145,6 +117,15 @@ function buscarEnStock(nombreDelProducto) {
         }
     }
     return console.log(`No tenemos este producto en stock`)
+}
+
+function miAviso(titulo, mensaje, icono){
+    Swal.fire({
+        title: titulo,
+        text: mensaje,
+        icon: icono,
+        confirmButtonText: 'Cerrar'
+    })
 }
 
 

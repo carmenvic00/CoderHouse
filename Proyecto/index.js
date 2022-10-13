@@ -1,5 +1,10 @@
 function respuestaClick(){
-    alert("Gracias por completar el formulario de adopción, nos estaremos contactando con vos a la brevedad!")
+    Swal.fire({
+        title: 'Gracias!',
+        text: 'Hemos recibido su formulario, dentro de poco lo estaremos contactando',
+        icon: 'success',
+        confirmButtonText: 'Cerrar'
+    })
   }
 
 let boton = document.getElementById("boton")
