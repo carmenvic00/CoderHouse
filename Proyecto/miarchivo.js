@@ -5,7 +5,10 @@ const mensaje = ["Aparte de ser un Pet Shop colaboramos con distintos refugios d
                 "¿Sabias qué los animales adultos son unos de los menos adoptados de un refugio? Se debe a que las personas prefieren más a los animales pequeños haciendo que estos duren años esperando ser adoptados. "]
 
 const randomIndex = Math.floor(Math.random() * ((mensaje.length) - 0) + 0) ;
-const randomMensajes = mensaje[randomIndex]
-const elementoMensajes = document.getElementById("mensajes")
-elementoMensajes.innerText = randomMensajes
+const randomMensajes = mensaje[randomIndex];
+const elementoMensajes = document.getElementById("mensajes");
+elementoMensajes.innerText = randomMensajes;
+
+
+
 

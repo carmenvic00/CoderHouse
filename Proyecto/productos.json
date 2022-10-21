@@ -1,0 +1,38 @@
+[
+    {
+      "imagen": "./imagenesPetShop/arenaSanitariaStoneCat.jpg",
+      "nombre": "Arena Sanitaria StoneCat - 8 Kg",
+      "precio": "3000$"
+    },
+    {
+        "imagen": "./imagenesPetShop/jugueteAntiestresCancat.jpg",
+      "nombre": "Juguete Antiestres Cancat Hueso Saborizado" ,
+      "precio": "1250$"
+
+    },
+    {
+        "imagen": "./imagenesPetShop/rascadorParaGatos.jpg",
+      "nombre": "Rascador Puppis Infinito Madera y Carton",
+      "precio": "2500$"
+
+    },
+    {
+        "imagen": "./imagenesPetShop/royalCaninPerroAdulto.jpg" ,
+      "nombre": " Alimento Royal Canin para Perro Medium Adulto - 15kg",
+      "precio": "7500$"
+
+    },
+    {
+        "imagen": "./imagenesPetShop/royalCaninWeightControl.png",
+      "nombre": "Alimento Royal Canin Gatos Castrados Weight Control adulto - 12 kg ",
+      "precio": "7000$"
+
+    },  
+    {
+        "imagen": "./imagenesPetShop/jugueteGatos.jpg",
+      "nombre": " Juguete Gatos Circuito interactivo de pelota",
+      "precio": "2500$"
+
+    }
+
+]
