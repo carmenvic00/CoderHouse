@@ -1,55 +1,3 @@
-const fetchProductos = async () => {
-    const productosFetch = await fetch("./productos.json");
-
-    const productosJson = await productosFetch.json();
-
-    renderizarProductos(productosJson);
-}
-
-const renderizarProductos = (productos) => {
-    const productosList = document.getElementById("productosList");
-    productos.forEach(producto => {
-        const col = document.createElement("div");
-        const productoHtml = ` 
-            <div class="BorderTextgatitos colorEnPetShop">
-                <img class="d-block mx-auto mt-3" width="200px" src="${producto.imagen}" alt="${producto.nombre}">
-                <p class="fw-bold text-center mt-3"> ${producto.nombre} </p>
-                <p class="fw-bold text-center mt-3"> ${producto.precio} </p>
-                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonArenaParaGatos">
-                    Agregar al Carrito
-                </button>
-                <button class="btn btn-outline-dark mb-3 mt-4 d-block mx-auto" id="botonArenaParaGatosDel">
-                    Eliminar del Carrito
-                </button>
-            </div>       
-        `;
-        col.innerHTML = productoHtml;
-
-        productosList.appendChild(col);
-    })
-}
-
-fetchProductos();
-
-
-let botonRoyalCaninCastrados = document.getElementById("botonRoyalCaninCastrados")
-let botonRoyalCaninCastradosDel = document.getElementById("botonRoyalCaninCastradosDel")
-
-let botonRoyalCaninMedium = document.getElementById("botonRoyalCaninMedium")
-let botonRoyalCaninMediumDel = document.getElementById("botonRoyalCaninMediumDel")
-
-let botonRascadorParaGatos = document.getElementById("botonRascadorParaGatos")
-let botonRascadorParaGatosDel = document.getElementById("botonRascadorParaGatosDel")
-
-let botonJugueteAntiEstres = document.getElementById("botonJugueteAntiEstres")
-let botonJugueteAntiEstresDel = document.getElementById("botonJugueteAntiEstresDel")
-
-let botonArenaParaGatos = document.getElementById("botonArenaParaGatos")
-let botonArenaParaGatosDel = document.getElementById("botonArenaParaGatosDel")
-
-let botonJugueteGatos = document.getElementById("botonJugueteGatos")
-let botonJugueteGatosDel = document.getElementById("botonJugueteGatosDel")
-
 let listaDeProductos = [
     {
         "id": 1,
@@ -157,24 +105,50 @@ function miAviso(mensaje, duracion){
     Toastify({
         text: mensaje,     
         duration: duracion   
-        }).showToast();
+        }).showToast();       
 }
 
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
 
-botonJugueteGatos.onclick = ("click", () => agregarAlCarrito("Juguete para gatos",1))
-botonJugueteGatosDel.onclick = ("click", () =>  eliminarDelCarrito("Juguete para gatos"))
+async function createButtons() {
+    await delay(1000);
+    let boton1 = document.getElementById("boton1")
+    let boton1Del = document.querySelector("#boton1Del")
 
-botonRoyalCaninCastrados.onclick = ("click", () => agregarAlCarrito("Royal Canin Castrados",1))
-botonRoyalCaninCastradosDel.onclick = ("click", () =>  eliminarDelCarrito("Royal Canin Castrados"))
+    let boton2 = document.getElementById("boton2")
+    let boton2Del = document.getElementById("boton2Del")
 
-botonRoyalCaninMedium.onclick = ("click", () => agregarAlCarrito("Royal Canin Medium",1))
-botonRoyalCaninMediumDel.onclick = ("click", () =>  eliminarDelCarrito("Royal Canin Medium"))
+    let boton3 = document.getElementById("boton3")
+    let boton3Del = document.getElementById("boton3Del")
 
-botonRascadorParaGatos.onclick = ("click", () => agregarAlCarrito("Rascador Para Gatos",1))
-botonRascadorParaGatosDel.onclick = ("click", () =>  eliminarDelCarrito("Rascador Para Gatos"))
+    let boton4 = document.getElementById("boton4")
+    let boton4Del = document.getElementById("boton4Del")
 
-botonJugueteAntiEstres.onclick = ("click", () => agregarAlCarrito("Juguete anti Estres",1))
-botonJugueteAntiEstresDel.onclick = ("click", () =>  eliminarDelCarrito("Juguete anti Estres"))
+    let boton5 = document.getElementById("boton5")
+    let boton5Del = document.getElementById("boton5Del")
 
-botonArenaParaGatos.onclick = ("click", () => agregarAlCarrito("Arena para Gatos",1))
-botonArenaParaGatosDel.onclick = ("click", () =>  eliminarDelCarrito("Arena para Gatos"))
+    let boton6 = document.getElementById("boton6")
+    let boton6Del = document.getElementById("boton6Del")
+
+    boton1.onclick = ("click", () => agregarAlCarrito("Arena para Gatos",1))
+    boton1Del.onclick = ("click", () =>  eliminarDelCarrito("Arena para Gatos"))
+
+    boton2.onclick = ("click", () => agregarAlCarrito("Juguete anti Estres",1))
+    boton2Del.onclick = ("click", () =>  eliminarDelCarrito("Juguete anti Estres"))
+
+    boton3.onclick = ("click", () => agregarAlCarrito("Rascador Para Gatos",1))
+    boton3Del.onclick = ("click", () =>  eliminarDelCarrito("Rascador Para Gatos"))
+
+    boton4.onclick = ("click", () => agregarAlCarrito("Royal Canin Medium",1))
+    boton4Del.onclick = ("click", () =>  eliminarDelCarrito("Royal Canin Medium"))
+
+    boton5.onclick = ("click", () => agregarAlCarrito("Royal Canin Castrados",1))
+    boton5Del.onclick = ("click", () =>  eliminarDelCarrito("Royal Canin Castrados"))
+
+    boton6.onclick = ("click", () => agregarAlCarrito("Juguete para gatos",1))
+    boton6Del.onclick = ("click", () =>  eliminarDelCarrito("Juguete para gatos"))
+
+}
+createButtons();
